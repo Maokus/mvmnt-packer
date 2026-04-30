@@ -43,7 +43,7 @@ class MainHeader extends React.Component {
                 </div> */}
 
                 <div className='main-header-github'>
-                    <a href="https://github.com/NeeEoo/funkin-tex-packer">
+                    <a href="https://github.com/Maokus/mvmnt-packer">
                         <img src="static/images/github-mark-white.png" height="25" alt="Github" />
                     </a>
                 </div>

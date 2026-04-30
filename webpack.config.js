@@ -14,10 +14,12 @@ let devtool = 'eval-source-map';
 let output = 'static/js/index.js';
 let debug = true;
 
-var prod = true;
+var isDevServer = process.argv.some(arg => arg.includes('webpack-dev-server'));
+
+var prod = !isDevServer;
 
 var argv = {
-    build: true
+    build: !isDevServer
 }
 
 let PLATFORM = argv.platform || 'web';

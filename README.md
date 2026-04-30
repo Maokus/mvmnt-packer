@@ -1,10 +1,10 @@
-# Funkin Packer
+# MVMNT Packer
 
 ![logo](https://raw.githubusercontent.com/odrick/free-tex-packer/master/electron/build/icons/96x96.png)
 
 #
 
-Funkin packer creates sprite sheets for you game or site. Rotation, trimming, multipacking, various export formats (json, xml, css, pixi.js, godot, phaser, cocos2d). Zip support. Split sheet tool.
+MVMNT packer creates sprite sheets for MVMNT. Rotation, trimming, multipacking, various export formats (json, xml, css, pixi.js, godot, phaser, cocos2d). Zip support. Split sheet tool.
 
 ![screenshot](https://free-tex-packer.com/wp-content/uploads/2019/01/screenshot.png)
 
