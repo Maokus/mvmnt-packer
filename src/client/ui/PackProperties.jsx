@@ -416,7 +416,7 @@ class PackProperties extends React.Component {
                                 <td></td>
                             </tr>
                             <tr>
-                                <td colSpan="3" className="center-align">
+                                <td colSpan="3" className="center-align section-divider">
                                     Advanced
                                 </td>
                             </tr>

@@ -3,9 +3,9 @@ html, body {
     margin: 0;
     width: 100%;
     height: 100%;
-    font-family: sans-serif, "Helvetica Neue", Helvetica, Arial;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     font-size: 12px;
-    background-color: #f1f1f1;
+    background-color: #e8ebed;
 }
 
 * {
@@ -59,8 +59,10 @@ html, body {
     position: absolute;
     top: 1.5rem;
     left: 5.2rem;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: normal;
+    opacity: 0.6;
+    letter-spacing: 0.01em;
 }
 
 .main-header-language {
@@ -122,7 +124,9 @@ html, body {
     position: relative;
     margin-left: 10px;
     margin-right: 10px;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.06);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .props-list {
@@ -133,7 +137,8 @@ html, body {
     overflow-y: auto;
     margin-left: 10px;
     margin-right: 10px;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.06);
+    border-radius: 6px;
 }
 
 .images-controllers {
@@ -167,35 +172,44 @@ html, body {
 }
 
 .image-drop-help {
-    color: #555;
+    color: #00695c;
     font-size: 12px;
     text-align: center;
 
     width: 250px;
-    padding: 30px 0;
+    padding: 32px 16px;
     margin: 50px auto;
 
-    background: #eee;
-    border: 1px solid #ccc;
+    background: #f0faf9;
+    border: 2px dashed #80cbc4;
 
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -o-border-radius: 4px;
-    -ms-border-radius: 4px;
-    border-radius: 4px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -o-border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    transition: background 0.15s ease, border-color 0.15s ease;
 }
 
 .image-drop-help.selected {
-    background: #ddd;
+    background: #e0f2f1;
+    border-color: #009688;
 }
 
 .image-list-item {
     cursor: pointer;
-    border: 1px dotted transparent;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: background 0.1s ease;
+}
+
+.image-list-item:hover {
+    background: rgba(0, 150, 136, 0.07);
 }
 
 .image-list-item-current {
-    border: 1px dotted #000;
+    border: 1px solid rgba(0, 105, 92, 0.35);
+    background: rgba(0, 150, 136, 0.1);
 }
 
 .image-list-image-container {
@@ -251,10 +265,18 @@ html, body {
     -ms-user-select: none;
     user-select: none;
     white-space: nowrap;
+    transition: filter 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 .btn:active {
     transform: scale(0.95);
+    filter: brightness(0.92);
+    box-shadow: none;
 }
 
 .edit-btn {
@@ -339,7 +361,7 @@ html, body {
 
 .pack-properties-containter td {
     font-weight: bold;
-    padding: 2px;
+    padding: 4px 3px;
     white-space: nowrap;
     text-align: left;
 }
@@ -360,6 +382,14 @@ html, body {
 .pack-properties-containter td > select {
     border-width: 1px;
     border-style: solid;
+}
+
+.pack-properties-containter td > input[type=text]:focus,
+.pack-properties-containter td > input[type=number]:focus,
+.pack-properties-containter td > select:focus {
+    outline: none;
+    border-color: #009688;
+    box-shadow: 0 0 0 2px rgba(0, 150, 136, 0.2);
 }
 
 .results-view {
@@ -453,15 +483,11 @@ html, body {
 
 .results-view-footer .btn-back-color {
     margin-right: 8px;
-    height: 20px;
-    width: 20px;
+    height: 22px;
+    width: 22px;
     display: inline-block;
-    border: 1px solid #ccc;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -o-border-radius: 4px;
-    -ms-border-radius: 4px;
-    border-radius: 4px;
+    border: 2px solid rgba(0,0,0,0.15);
+    border-radius: 50%;
     cursor: pointer;
 }
 
@@ -470,7 +496,8 @@ html, body {
 }
 
 .results-view-footer .btn-back-color.selected {
-    border: 2px dotted #999;
+    border: 2px solid rgba(0,0,0,0.55);
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.6);
 }
 
 .center-align {
@@ -503,7 +530,7 @@ html, body {
     border-radius: 4px;
     border-width: 1px;
     border-style: solid;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .player-fps {
@@ -542,17 +569,17 @@ html, body {
     margin: auto;
     margin-top: 180px;
     font-size: 14px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -o-border-radius: 4px;
-    -ms-border-radius: 4px;
-    border-radius: 4px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
     border-width: 1px;
     border-style: solid;
     padding: 16px;
     background: #fff;
     border-color: #ccc;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .message-box-content {
@@ -644,15 +671,15 @@ html, body {
     margin: auto;
     margin-top: 86px;
     font-size: 14px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -o-border-radius: 4px;
-    -ms-border-radius: 4px;
-    border-radius: 4px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
     border: 1px solid #ccc;
     padding: 16px;
     text-align: left;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .about-content .btn {
@@ -732,15 +759,15 @@ html, body {
     margin: auto;
     margin-top: 86px;
     font-size: 14px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -o-border-radius: 4px;
-    -ms-border-radius: 4px;
-    border-radius: 4px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
     border: 1px solid #ccc;
     padding: 16px;
     text-align: left;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .updater-content .btn {
@@ -863,15 +890,15 @@ html, body {
     margin: auto;
     margin-top: 86px;
     font-size: 14px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -o-border-radius: 4px;
-    -ms-border-radius: 4px;
-    border-radius: 4px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
     border: 1px solid #ccc;
     padding: 16px;
     text-align: left;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .edit-custom-exporter-controls {
@@ -917,15 +944,15 @@ html, body {
     margin: auto;
     margin-top: 86px;
     font-size: 14px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -o-border-radius: 4px;
-    -ms-border-radius: 4px;
-    border-radius: 4px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
     border: 1px solid #ccc;
     padding: 16px;
     text-align: left;
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .sheet-splitter-content .btn {
@@ -1006,15 +1033,11 @@ html, body {
 
 .sheet-splitter-bottom .btn-back-color {
     margin-right: 8px;
-    height: 20px;
-    width: 20px;
+    height: 22px;
+    width: 22px;
     display: inline-block;
-    border: 1px solid #ccc;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -o-border-radius: 4px;
-    -ms-border-radius: 4px;
-    border-radius: 4px;
+    border: 2px solid rgba(0,0,0,0.15);
+    border-radius: 50%;
     cursor: pointer;
 }
 
@@ -1024,10 +1047,36 @@ html, body {
 }
 
 .sheet-splitter-bottom .btn-back-color.selected {
-    border: 2px dotted #999;
+    border: 2px solid rgba(0,0,0,0.55);
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.6);
 }
 
 .sheet-splitter-bottom table {
     margin: auto;
     margin-right: 300px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.18);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,0,0,0.28);
+}
+
+.section-divider {
+    padding-top: 14px !important;
+    padding-bottom: 6px !important;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    border-top: 1px solid rgba(0,0,0,0.1);
 }
